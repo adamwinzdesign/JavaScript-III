@@ -15,11 +15,11 @@
 // code example for Window Binding
 'use strict';
 
-function trumpet(){
-  console.log(this.blaarp);
-}
-trumpet();
-const blaarp = '🎺';  // cannot read property blaarp of undefined
+// function trumpet(){
+//   console.log(this.blaarp);
+// }
+// trumpet();
+// const blaarp = '🎺';  // cannot read property blaarp of undefined
 
 // Principle 2
 
@@ -31,7 +31,7 @@ let myTrumpet = {
   condition: 'used',
   noise: 'prrrrt',
   blaarp: function(){
-    console.log(`The ${this.condition} ${this.trumpet} goes ${this.noise}!`);
+    console.log(`The ${this.condition} ${this.type} goes ${this.noise}!`);
   }
 }
 
@@ -43,7 +43,7 @@ myTrumpet.blaarp();
 // Using new creates a new object, .this points to it.
 
 function Instrument(sound) {
-  this.timbre - sound;
+  this.timbre = sound;
 }
 
 let keyboard = new Instrument('blingablingblong');
@@ -59,12 +59,12 @@ function makeNoise(){
   console.log(this.blart);
 }
 
-let myTrombone = {
-  condition: 'new',
-  blart: 'fruuuuuut'
-}
+// let myTrombone = {
+//   condition: 'new',
+//   blart: 'fruuuuuut'
+// }
 
-makeNoise.call(myTrombone);
+// makeNoise.call(myTrombone);
 
 // bind
 
@@ -77,6 +77,6 @@ let myTrombone = {
   blart: 'fruuuuuut'
 }
 
-tromboneNoise = makeNoise.bind(myTrombone);
+let tromboneNoise = makeNoise.bind(myTrombone);
 
-tromboneNoise();
+console.log(tromboneNoise());
