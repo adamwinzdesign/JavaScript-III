@@ -40,8 +40,15 @@ myTrumpet.blaarp();
 // Principle 3
 
 // code example for New Binding
+// Using new creates a new object, .this points to it.
 
+function Instrument(sound) {
+  this.timbre - sound;
+}
 
+let keyboard = new Instrument('blingablingblong');
+
+console.log(keyboard.timbre);
 
 // Principle 4
 
