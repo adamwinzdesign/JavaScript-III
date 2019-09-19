@@ -126,6 +126,43 @@ const archer = new Humanoid({
   language: 'Elvish',
 });
 
+
+const villain = new Humanoid({
+  createdAt: new Date(),
+  dimensions: {
+    length: 2,
+    width: 3,
+    height: 5,
+  },
+  healthPoints: 25,
+  name: 'Akuma',
+  team: 'Chaos Lords',
+  weapons: [
+    'Fireball',
+    'Raging Demon',
+    'Shadow Cut'
+  ],
+  language: 'Demonic',
+});
+
+const hero = new Humanoid({
+  createdAt: new Date(),
+  dimensions: {
+    length: 2,
+    width: 2,
+    height: 4,
+  },
+  healthpoints: 20,
+  name: 'Ryu',
+  team: 'Cobra Kai',
+  weapons: [
+    'Ha Do Ken',
+    'Sho Ryu Ken'
+  ],
+  language: 'Japanese',
+});
+
+
 console.log(mage.createdAt); // Today's date
 console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
 console.log(swordsman.healthPoints); // 15
@@ -136,9 +173,21 @@ console.log(archer.language); // Elvish
 console.log(archer.greet()); // Lilith offers a greeting in Elvish.
 console.log(mage.takeDamage()); // Bruce took damage.
 console.log(swordsman.destroy()); // Sir Mustachio was removed from the game.
+console.log(villain.createdAt);
+console.log(villain.name);
+console.log(hero.weapons);
+console.log(villain.greet());
+console.log(villain.attack());
 
+console.log(`Swordsman sprang into existence at ${swordsman.createdAt}`);
 
-  // Stretch task: 
-  // * Create Villain and Hero constructor functions that inherit from the Humanoid constructor function.  
-  // * Give the Hero and Villains different methods that could be used to remove health points from objects which could result in destruction if health gets to 0 or drops below 0;
-  // * Create two new objects, one a villain and one a hero and fight it out with methods!
+let mageDate = mage.createdAt;
+console.log(`testing ${mage.createdAt}`);
+console.log(`testing ${mageDate}`);
+
+console.log(mage.greet());
+
+// Stretch task: 
+// * Create Villain and Hero constructor functions that inherit from the Humanoid constructor function.  
+// * Give the Hero and Villains different methods that could be used to remove health points from objects which could result in destruction if health gets to 0 or drops below 0;
+// * Create two new objects, one a villain and one a hero and fight it out with methods!
