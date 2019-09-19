@@ -4,7 +4,8 @@
 * 1. Window binding: If the .this keyword is not pointed in any particular direction, it defaults to the window object, unless we are in strict mode, when it will default to undefined.
 * 2. Implicit binding: In implicit binding, the .this keyword refers to whatever is placed before the dot.  This only applies to objects with methods.
 * 3. New binding:
-* 4. Explicit binding:
+* 4. Explicit binding: In explicit binding, we are telling the browser/JS Engine explicitly what .this refers to, using call, apply, and bind.  Call immediately invokes the function.  Call passes arguments one by one.  Apply also immediately invokes the function also, but arguments are passed in as an array.  Bind passes arguments one by one, but it does not immediately invoke the function, it returns a brand new function that can be invoked later.  In other words, call, apply, and bind can be used to invoke a function with a specific value for this.  Bind is used to make a new function that is bound to a function.
+* 
 *
 * write out a code example of each explanation above
 */
@@ -40,6 +41,35 @@ myTrumpet.blaarp();
 
 // code example for New Binding
 
+
+
 // Principle 4
 
 // code example for Explicit Binding
+// call
+
+function makeNoise(){
+  console.log(this.blart);
+}
+
+let myTrombone = {
+  condition: 'new',
+  blart: 'fruuuuuut'
+}
+
+makeNoise.call(myTrombone);
+
+// bind
+
+function makeNoise(){
+  console.log(this.blart);
+}
+
+let myTrombone = {
+  condtion: 'new',
+  blart: 'fruuuuuut'
+}
+
+tromboneNoise = makeNoise.bind(myTrombone);
+
+tromboneNoise();
